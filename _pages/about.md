@@ -9,7 +9,7 @@ subtitle: >
 
 profile:
   align: right
-  image: github-avatar.jpg
+  image: profile-photo.jpg
   image_circular: false # crops the image to make it circular
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -68,6 +68,19 @@ My research interests include vision-language models, agents, trustworthy reason
     padding-top: 0.25rem;
   }
 
+  .post h2 {
+    margin-top: 2.6rem;
+    margin-bottom: 1.1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+
+  .post h2:first-of-type {
+    margin-top: 2.2rem;
+  }
+
   .social {
     font-size: 0.86rem;
   }
@@ -88,7 +101,26 @@ My research interests include vision-language models, agents, trustworthy reason
     font-weight: 700;
   }
 
+  .publications ol.bibliography,
+  .publications .bibliography {
+    display: grid;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .publications ol.bibliography > li,
+  .publications .bibliography > li {
+    margin-bottom: 0;
+    padding: 1.05rem 1.15rem;
+    border: 1px solid var(--global-divider-color);
+    border-left: 0.28rem solid var(--global-theme-color);
+    border-radius: 8px;
+    background: var(--global-card-bg-color, var(--global-bg-color));
+  }
+
   .publication-note {
+    margin-top: 0.85rem;
+    margin-bottom: 2.2rem;
     font-size: 0.9rem;
   }
 </style>
