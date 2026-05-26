@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
-description: Selected publications and preprints.
+title: Publications
+description: Publications and preprints.
 nav: false
 nav_order: 2
 ---
@@ -19,10 +19,16 @@ nav_order: 2
 
 </div>
 
+<p class="publication-note">† Corresponding author.</p>
+
 <style>
   .publications .author em {
     border-bottom: 0;
     font-style: normal;
     font-weight: 700;
+  }
+
+  .publication-note {
+    font-size: 0.9rem;
   }
 </style>

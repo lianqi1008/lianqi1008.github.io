@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: >
   [<a href="https://github.com/lianqi1008">GitHub</a>]
@@ -9,14 +9,14 @@ subtitle: >
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: github-avatar.jpg
   image_circular: false # crops the image to make it circular
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 
 announcements:
-  enabled: true # includes a list of news items
+  enabled: false # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
@@ -30,7 +30,17 @@ I am a Ph.D. student in Information and Communication Engineering at [Shanghai J
 
 My research interests include vision-language models, agents, trustworthy reasoning, multimodal content moderation, and efficient visual representations.
 
-## Professional Services
+## Publications
+
+<div class="publications">
+
+{% bibliography --group_by none --query @*[selected=true]* %}
+
+</div>
+
+<p class="publication-note">† Corresponding author.</p>
+
+## Services
 
 - Reviewer, ECCV 2026
 
@@ -76,5 +86,9 @@ My research interests include vision-language models, agents, trustworthy reason
     border-bottom: 0;
     font-style: normal;
     font-weight: 700;
+  }
+
+  .publication-note {
+    font-size: 0.9rem;
   }
 </style>
