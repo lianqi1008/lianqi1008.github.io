@@ -50,6 +50,35 @@ nav_order: 2
     background: var(--global-card-bg-color, var(--global-bg-color));
   }
 
+  .publications ol.bibliography > li .row,
+  .publications .bibliography > li .row {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .publications ol.bibliography > li .col,
+  .publications .bibliography > li .col {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+
+  .publications ol.bibliography > li .col-sm-8,
+  .publications .bibliography > li .col-sm-8,
+  .publications ol.bibliography > li .col-md-8,
+  .publications .bibliography > li .col-md-8,
+  .publications ol.bibliography > li .col-lg-8,
+  .publications .bibliography > li .col-lg-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .publications ol.bibliography > li .preview,
+  .publications .bibliography > li .preview {
+    max-width: 8.5rem;
+    margin-right: 1rem;
+  }
+
   .publication-note {
     margin-top: 0.85rem;
     font-size: 0.9rem;
