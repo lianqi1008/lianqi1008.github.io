@@ -3,7 +3,7 @@ layout: page
 permalink: /repositories/
 title: repositories
 description: Research code and open-source projects.
-nav: true
+nav: false
 nav_order: 4
 ---
 

@@ -7,3 +7,23 @@
 
 "Vision":
   color: "#009f36"
+
+"KDD":
+  url: https://kdd.org/
+  color: "#005f73"
+
+"ICLR":
+  url: https://iclr.cc/
+  color: "#0a9396"
+
+"NeurIPS":
+  url: https://neurips.cc/
+  color: "#9b2226"
+
+"CVPR":
+  url: https://cvpr.thecvf.com/
+  color: "#ca6702"
+
+"PR":
+  url: https://www.sciencedirect.com/journal/pattern-recognition
+  color: "#3a0ca3"
