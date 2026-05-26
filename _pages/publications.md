@@ -18,3 +18,11 @@ nav_order: 2
 {% bibliography %}
 
 </div>
+
+<style>
+  .publications .author em {
+    border-bottom: 0;
+    font-style: normal;
+    font-weight: 700;
+  }
+</style>

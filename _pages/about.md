@@ -2,19 +2,18 @@
 layout: about
 title: about
 permalink: /
-subtitle: Ph.D. student, Shanghai Jiao Tong University
+subtitle: >
+  [<a href="https://github.com/lianqi1008">GitHub</a>]
+  [<a href="mailto:anqi.li@sjtu.edu.cn">Email</a>]
+  [<a href="https://scholar.google.com/citations?user=WLFHu5cAAAAJ&hl=en">Google Scholar</a>]
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p><a href="mailto:anqi.li@sjtu.edu.cn">Email</a></p>
-    <p><a href="https://scholar.google.com/citations?user=WLFHu5cAAAAJ&hl=en">Google Scholar</a></p>
-    <p><a href="https://github.com/lianqi1008">GitHub</a></p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+social: false # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
@@ -30,6 +29,10 @@ latest_posts:
 I am a Ph.D. student in Information and Communication Engineering at [Shanghai Jiao Tong University](https://www.sjtu.edu.cn/), advised by Prof. Guo Lu and Prof. Wenjun Zhang. I received my M.S. degree from Beijing Jiaotong University and my B.S. degree from Wuhan University of Technology.
 
 My research interests include vision-language models, agents, trustworthy reasoning, multimodal content moderation, and efficient visual representations.
+
+## Professional Services
+
+- Reviewer, ECCV 2026
 
 <style>
   body {
@@ -63,5 +66,15 @@ My research interests include vision-language models, agents, trustworthy reason
   .social i,
   .social svg {
     font-size: 0.92em;
+  }
+
+  .profile img {
+    max-width: 60%;
+  }
+
+  .publications .author em {
+    border-bottom: 0;
+    font-style: normal;
+    font-weight: 700;
   }
 </style>
