@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our work **Towards Trustworthy Multimodal Moderation via Policy-Aligned Reasoning** was accepted to KDD 2026.
+Our work Towards Trustworthy Multimodal Moderation via Policy-Aligned Reasoning was accepted to **KDD 2026**.

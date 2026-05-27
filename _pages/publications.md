@@ -53,24 +53,52 @@ nav_order: 2
   .publications ol.bibliography > li .row,
   .publications .bibliography > li .row {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 1rem;
     width: 100%;
     margin-right: 0;
     margin-left: 0;
   }
 
+  .publications ol.bibliography > li .abbr,
+  .publications .bibliography > li .abbr {
+    display: flex;
+    flex: 0 0 210px;
+    flex-direction: column;
+    max-width: 210px;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .publications ol.bibliography > li .abbr abbr,
+  .publications .bibliography > li .abbr abbr,
+  .publications ol.bibliography > li .abbr .badge,
+  .publications .bibliography > li .abbr .badge {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
   .publications ol.bibliography > li .preview,
   .publications .bibliography > li .preview {
-    flex: 0 0 180px;
-    max-width: 180px;
-    margin-right: 0;
+    width: 100%;
+    max-width: 210px;
+    margin: auto 0 0;
   }
 
   .publications ol.bibliography > li .preview img,
   .publications .bibliography > li .preview img {
     width: 100%;
     border-radius: 6px;
+  }
+
+  .publications ol.bibliography > li .title,
+  .publications .bibliography > li .title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.35;
   }
 
   .publications ol.bibliography > li .col,
@@ -81,12 +109,19 @@ nav_order: 2
     padding-left: 0;
   }
 
+  .publications ol.bibliography > li .abbr + .col,
+  .publications .bibliography > li .abbr + .col {
+    padding-left: 0;
+  }
+
   @media (max-width: 575.98px) {
     .publications ol.bibliography > li .row,
     .publications .bibliography > li .row {
       flex-direction: column;
     }
 
+    .publications ol.bibliography > li .abbr,
+    .publications .bibliography > li .abbr,
     .publications ol.bibliography > li .preview,
     .publications .bibliography > li .preview {
       flex-basis: auto;

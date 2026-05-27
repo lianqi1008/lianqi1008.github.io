@@ -16,7 +16,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 
 announcements:
-  enabled: true # includes a list of news items
+  enabled: false # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
@@ -29,6 +29,12 @@ latest_posts:
 I am a Ph.D. student in Information and Communication Engineering at [Shanghai Jiao Tong University](https://www.sjtu.edu.cn/), advised by **<u>Prof. Guo Lu</u>** and **<u>Prof. Wenjun Zhang</u>**. I received my M.S. degree from Beijing Jiaotong University and my B.S. degree from Wuhan University of Technology.
 
 My research interests include vision-language models, agents, trustworthy reasoning, multimodal content moderation, and efficient visual representations.
+
+<div class="intro-spacer"></div>
+
+## News
+
+{% include news.liquid %}
 
 ## Publications
 
@@ -76,9 +82,18 @@ My research interests include vision-language models, agents, trustworthy reason
     width: 100%;
   }
 
+  .post article > .clearfix > p {
+    max-width: 96%;
+    margin-bottom: 1.05rem;
+  }
+
+  .intro-spacer {
+    height: 1.1rem;
+  }
+
   .profile {
-    width: 36%;
-    max-width: 320px;
+    width: 29%;
+    max-width: 256px;
     margin-left: 2rem;
     margin-bottom: 1rem;
   }
@@ -107,8 +122,8 @@ My research interests include vision-language models, agents, trustworthy reason
   }
 
   .profile img {
-    width: 72%;
-    max-width: 72%;
+    width: 58%;
+    max-width: 58%;
   }
 
   .publications .author em {
@@ -137,18 +152,38 @@ My research interests include vision-language models, agents, trustworthy reason
   .publications ol.bibliography > li .row,
   .publications .bibliography > li .row {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 1rem;
     width: 100%;
     margin-right: 0;
     margin-left: 0;
   }
 
+  .publications ol.bibliography > li .abbr,
+  .publications .bibliography > li .abbr {
+    display: flex;
+    flex: 0 0 210px;
+    flex-direction: column;
+    max-width: 210px;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .publications ol.bibliography > li .abbr abbr,
+  .publications .bibliography > li .abbr abbr,
+  .publications ol.bibliography > li .abbr .badge,
+  .publications .bibliography > li .abbr .badge {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
   .publications ol.bibliography > li .preview,
   .publications .bibliography > li .preview {
-    flex: 0 0 180px;
-    max-width: 180px;
-    margin-right: 0;
+    width: 100%;
+    max-width: 210px;
+    margin: auto 0 0;
   }
 
   .publications ol.bibliography > li .preview img,
@@ -157,11 +192,24 @@ My research interests include vision-language models, agents, trustworthy reason
     border-radius: 6px;
   }
 
+  .publications ol.bibliography > li .title,
+  .publications .bibliography > li .title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
   .publications ol.bibliography > li .col,
   .publications .bibliography > li .col {
     flex: 1 1 0;
     max-width: none;
     padding-right: 0;
+    padding-left: 0;
+  }
+
+  .publications ol.bibliography > li .abbr + .col,
+  .publications .bibliography > li .abbr + .col {
     padding-left: 0;
   }
 
@@ -173,9 +221,14 @@ My research interests include vision-language models, agents, trustworthy reason
 
   @media (max-width: 575.98px) {
     .profile {
-      width: 45%;
-      max-width: 240px;
+      width: 36%;
+      max-width: 192px;
       margin-left: 1rem;
+    }
+
+    .profile img {
+      width: 58%;
+      max-width: 58%;
     }
 
     .publications ol.bibliography > li .row,
@@ -183,6 +236,8 @@ My research interests include vision-language models, agents, trustworthy reason
       flex-direction: column;
     }
 
+    .publications ol.bibliography > li .abbr,
+    .publications .bibliography > li .abbr,
     .publications ol.bibliography > li .preview,
     .publications .bibliography > li .preview {
       flex-basis: auto;
