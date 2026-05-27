@@ -4,8 +4,8 @@ title: About
 permalink: /
 subtitle: >
   [<a href="https://github.com/lianqi1008">GitHub</a>]
-  [<a href="mailto:anqi.li@sjtu.edu.cn">Email</a>]
   [<a href="https://scholar.google.com/citations?user=WLFHu5cAAAAJ&hl=en">Google Scholar</a>]
+  [<a href="mailto:anqi.li@sjtu.edu.cn">Email</a>]
 
 profile:
   align: right
