@@ -16,7 +16,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 
 announcements:
-  enabled: false # includes a list of news items
+  enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
@@ -136,31 +136,33 @@ My research interests include vision-language models, agents, trustworthy reason
 
   .publications ol.bibliography > li .row,
   .publications .bibliography > li .row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
     width: 100%;
     margin-right: 0;
     margin-left: 0;
   }
 
-  .publications ol.bibliography > li .col,
-  .publications .bibliography > li .col {
-    flex: 1 1 auto;
-    max-width: 100%;
-  }
-
-  .publications ol.bibliography > li .col-sm-8,
-  .publications .bibliography > li .col-sm-8,
-  .publications ol.bibliography > li .col-md-8,
-  .publications .bibliography > li .col-md-8,
-  .publications ol.bibliography > li .col-lg-8,
-  .publications .bibliography > li .col-lg-8 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-
   .publications ol.bibliography > li .preview,
   .publications .bibliography > li .preview {
-    max-width: 8.5rem;
-    margin-right: 1rem;
+    flex: 0 0 180px;
+    max-width: 180px;
+    margin-right: 0;
+  }
+
+  .publications ol.bibliography > li .preview img,
+  .publications .bibliography > li .preview img {
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  .publications ol.bibliography > li .col,
+  .publications .bibliography > li .col {
+    flex: 1 1 0;
+    max-width: none;
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .publication-note {
@@ -174,6 +176,17 @@ My research interests include vision-language models, agents, trustworthy reason
       width: 45%;
       max-width: 240px;
       margin-left: 1rem;
+    }
+
+    .publications ol.bibliography > li .row,
+    .publications .bibliography > li .row {
+      flex-direction: column;
+    }
+
+    .publications ol.bibliography > li .preview,
+    .publications .bibliography > li .preview {
+      flex-basis: auto;
+      max-width: 100%;
     }
   }
 </style>
