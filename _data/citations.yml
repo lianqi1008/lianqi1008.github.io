@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-07-15'
+  last_updated: '2026-07-27'
 papers:
   WLFHu5cAAAAJ:5nxA0vEk-isC:
     citations: 3
@@ -14,7 +14,7 @@ papers:
     title: Enhanced video super-resolution network towards compressed data
     year: '2024'
   WLFHu5cAAAAJ:UebtZRa9Y70C:
-    citations: 25
+    citations: 26
     title: 'Flowcut: Rethinking redundancy via information flow for efficient vision-language models'
     year: '2026'
   WLFHu5cAAAAJ:hqOjcs7Dif8C:
@@ -22,9 +22,9 @@ papers:
     title: Towards Trustworthy Multimodal Moderation via Policy-Aligned Reasoning and Hierarchical Labeling
     year: '2025'
   WLFHu5cAAAAJ:u-x6o8ySG0sC:
-    citations: 4
+    citations: 3
     title: You can mask more for extremely low-bitrate image compression
-    year: '2026'
+    year: '2023'
   WLFHu5cAAAAJ:u5HHmVD_uO8C:
     citations: 18
     title: 'SRInpaintor: When super-resolution meets transformer for image inpainting'
