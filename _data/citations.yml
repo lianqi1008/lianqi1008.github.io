@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-07-27'
+  last_updated: '2026-08-05'
 papers:
   WLFHu5cAAAAJ:5nxA0vEk-isC:
     citations: 3
     title: Unified spatiotemporal token compression for video-llms at ultra-low retention
     year: '2026'
   WLFHu5cAAAAJ:Se3iqnhoufwC:
-    citations: 20
+    citations: 21
     title: 'Once-for-All: Controllable Generative Image Compression with Dynamic Granularity Adaptation'
     year: '2025'
   WLFHu5cAAAAJ:UeHWp8X0CEIC:
@@ -22,9 +22,9 @@ papers:
     title: Towards Trustworthy Multimodal Moderation via Policy-Aligned Reasoning and Hierarchical Labeling
     year: '2025'
   WLFHu5cAAAAJ:u-x6o8ySG0sC:
-    citations: 3
+    citations: 4
     title: You can mask more for extremely low-bitrate image compression
-    year: '2023'
+    year: '2026'
   WLFHu5cAAAAJ:u5HHmVD_uO8C:
     citations: 18
     title: 'SRInpaintor: When super-resolution meets transformer for image inpainting'
