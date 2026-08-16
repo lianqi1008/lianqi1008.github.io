@@ -342,17 +342,31 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     margin-bottom: 0.75rem;
   }
 
+  /* Venue badge and preview image share the exact same column width */
+  .publications ol.bibliography > li .abbr figure,
+  .publications .bibliography > li .abbr figure {
+    width: 100%;
+    margin: 0;
+  }
+
   .publications ol.bibliography > li .preview,
   .publications .bibliography > li .preview {
     width: 100%;
-    max-width: 210px;
+    max-width: 100%;
     margin: auto 0 0;
   }
 
   .publications ol.bibliography > li .preview img,
-  .publications .bibliography > li .preview img {
+  .publications .bibliography > li .preview img,
+  .publications ol.bibliography > li img.preview,
+  .publications .bibliography > li img.preview {
+    display: block;
     width: 100%;
+    max-width: 100%;
+    border: 1px solid var(--global-divider-color);
     border-radius: 6px;
+    background: #fff;
+    box-sizing: border-box;
   }
 
   .publications ol.bibliography > li .title,
@@ -379,8 +393,8 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     color: var(--global-text-color-light);
   }
 
-  .publications ol.bibliography > li .col,
-  .publications .bibliography > li .col {
+  .publications ol.bibliography > li .col:not(.abbr),
+  .publications .bibliography > li .col:not(.abbr) {
     flex: 1 1 0;
     max-width: none;
     padding-right: 0;
