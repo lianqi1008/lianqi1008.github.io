@@ -77,7 +77,7 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
 
 <style>
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
     font-weight: 400;
   }
 
@@ -86,7 +86,7 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   h3,
   .navbar-brand,
   .post-title {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: Georgia, "Times New Roman", "Songti SC", STSong, SimSun, serif;
     font-weight: 600;
   }
 
@@ -204,9 +204,6 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     height: 44px;
     border-radius: 8px;
     object-fit: contain;
-    background: #fff;
-    padding: 3px;
-    border: 1px solid var(--global-divider-color);
   }
 
   .experience-body {
@@ -243,8 +240,8 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   }
 
   .profile {
-    width: 30%;
-    max-width: 280px;
+    width: 24%;
+    max-width: 220px;
     margin-top: 0.3rem;
     margin-left: 2rem;
     margin-bottom: 1rem;
@@ -434,8 +431,8 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
 
   @media (max-width: 575.98px) {
     .profile {
-      width: 42%;
-      max-width: 200px;
+      width: 36%;
+      max-width: 170px;
       margin-left: 1rem;
     }
 
