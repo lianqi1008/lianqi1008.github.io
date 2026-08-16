@@ -128,6 +128,11 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     margin-bottom: 1.05rem;
   }
 
+  /* Hide the site footer (copyright / theme credits) */
+  footer {
+    display: none !important;
+  }
+
   .intro-spacer {
     height: 1.1rem;
   }
