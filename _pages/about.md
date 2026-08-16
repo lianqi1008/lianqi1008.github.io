@@ -65,8 +65,24 @@ My research interests include vision-language models, agents, trustworthy reason
     font-weight: 600;
   }
 
+  /* Hide navbar chrome but keep the dark-mode toggle accessible */
   .navbar {
-    display: none;
+    padding: 0.25rem 0.75rem;
+    background: transparent !important;
+    border-bottom: none;
+    box-shadow: none !important;
+  }
+
+  .navbar .navbar-brand,
+  .navbar .navbar-toggler,
+  .navbar .navbar-menu-list > li:not(.toggle-container) {
+    display: none !important;
+  }
+
+  .navbar .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    justify-content: flex-end;
   }
 
   .post,
@@ -147,6 +163,15 @@ My research interests include vision-language models, agents, trustworthy reason
     border-left: 0.28rem solid var(--global-theme-color);
     border-radius: 8px;
     background: var(--global-card-bg-color, var(--global-bg-color));
+    transition:
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .publications ol.bibliography > li:hover,
+  .publications .bibliography > li:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
   }
 
   .publications ol.bibliography > li .row,
@@ -211,6 +236,40 @@ My research interests include vision-language models, agents, trustworthy reason
   .publications ol.bibliography > li .abbr + .col,
   .publications .bibliography > li .abbr + .col {
     padding-left: 0;
+  }
+
+  /* Link buttons (arXiv / Code / ...) rendered as subtle pills */
+  .publications .links a.btn,
+  .publications .links a.award {
+    margin: 0.35rem 0.3rem 0 0;
+    padding: 0.12rem 0.6rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+  }
+
+  .publications .links a.btn:hover {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+  }
+
+  /* First-author marker */
+  .publications .links a.award {
+    border-color: var(--global-theme-color);
+    background: var(--global-theme-color);
+    color: var(--global-bg-color);
+    cursor: default;
+    font-weight: 600;
+  }
+
+  /* Google Scholar citation badge alignment */
+  .publications .badges {
+    margin-top: 0.45rem;
+  }
+
+  .publications .badges img {
+    height: 1.15rem;
   }
 
   .publication-note {
