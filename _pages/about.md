@@ -3,14 +3,18 @@ layout: about
 title: About
 permalink: /
 subtitle: >
-  [<a href="https://github.com/lianqi1008">GitHub</a>]
-  [<a href="https://scholar.google.com/citations?user=WLFHu5cAAAAJ&hl=en">Google Scholar</a>]
-  [<a href="mailto:anqi.li@sjtu.edu.cn">Email</a>]
+  <span class="intro-links">
+  <a href="https://github.com/lianqi1008"><i class="fa-brands fa-github"></i> GitHub</a>
+  <a href="https://scholar.google.com/citations?user=WLFHu5cAAAAJ&hl=en"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+  <a href="mailto:anqi.li@sjtu.edu.cn"><i class="fa-solid fa-envelope"></i> Email</a>
+  </span>
 
 profile:
   align: right
   image: profile-photo.jpg
   image_circular: false # crops the image to make it circular
+  more_info: >
+    <p class="profile-location"><i class="fa-solid fa-location-dot"></i> Shanghai, China</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
@@ -28,13 +32,34 @@ latest_posts:
 
 I am a Ph.D. student in Information and Communication Engineering at [Shanghai Jiao Tong University](https://www.sjtu.edu.cn/), advised by **<u>Prof. Guo Lu</u>** and **<u>Prof. Wenjun Zhang</u>**. I received my M.S. degree from Beijing Jiaotong University and my B.S. degree from Wuhan University of Technology.
 
-My research interests include vision-language models, agents, trustworthy reasoning, multimodal content moderation, and efficient visual representations.
+My research focuses on <span class="research-highlight">LLM post-training</span> and <span class="research-highlight">AIGC</span> — aligning and enhancing large models after pre-training, and building generative models for visual and multimodal content.
 
 <div class="intro-spacer"></div>
 
 ## News
 
 {% include news.liquid %}
+
+## Experience
+
+<div class="experience-list">
+  <div class="experience-item">
+    <img class="experience-logo" src="{{ '/assets/img/logos/shanghai-ai-lab.png' | relative_url }}" alt="Shanghai AI Laboratory logo" loading="lazy" />
+    <div class="experience-body">
+      <div class="experience-role">Research Intern</div>
+      <div class="experience-org">Shanghai Artificial Intelligence Laboratory</div>
+    </div>
+    <div class="experience-date">Aug 2025 – Present</div>
+  </div>
+  <div class="experience-item">
+    <img class="experience-logo" src="{{ '/assets/img/logos/xiaohongshu.png' | relative_url }}" alt="Xiaohongshu logo" loading="lazy" />
+    <div class="experience-body">
+      <div class="experience-role">Research Intern</div>
+      <div class="experience-org">Xiaohongshu (RedNote)</div>
+    </div>
+    <div class="experience-date">Jul 2024 – Jul 2025</div>
+  </div>
+</div>
 
 ## Publications
 
@@ -107,9 +132,120 @@ My research interests include vision-language models, agents, trustworthy reason
     height: 1.1rem;
   }
 
+  /* --- Intro / header area --- */
+  .post-header .post-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  .desc .intro-links {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.35rem;
+  }
+
+  .desc .intro-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.22rem 0.75rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: var(--global-text-color);
+    text-decoration: none;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .desc .intro-links a:hover {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+  }
+
+  .research-highlight {
+    padding: 0.05rem 0.35rem;
+    border-radius: 4px;
+    background: color-mix(in srgb, var(--global-theme-color) 12%, transparent);
+    color: var(--global-theme-color);
+    font-weight: 600;
+  }
+
+  .profile-location {
+    margin-top: 0.4rem;
+    font-size: 0.82rem;
+    color: var(--global-text-color-light);
+    text-align: center;
+  }
+
+  /* --- Experience --- */
+  .experience-list {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .experience-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1.15rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    background: var(--global-card-bg-color, var(--global-bg-color));
+  }
+
+  .experience-logo {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: #fff;
+    padding: 3px;
+    border: 1px solid var(--global-divider-color);
+  }
+
+  .experience-body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .experience-role {
+    font-size: 0.98rem;
+    font-weight: 600;
+  }
+
+  .experience-org {
+    font-size: 0.88rem;
+    color: var(--global-text-color-light);
+  }
+
+  .experience-date {
+    flex: 0 0 auto;
+    font-size: 0.82rem;
+    color: var(--global-text-color-light);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 575.98px) {
+    .experience-item {
+      flex-wrap: wrap;
+    }
+
+    .experience-date {
+      flex-basis: 100%;
+      margin-left: calc(44px + 1rem);
+    }
+  }
+
   .profile {
-    width: 29%;
-    max-width: 256px;
+    width: 30%;
+    max-width: 280px;
+    margin-top: 0.3rem;
     margin-left: 2rem;
     margin-bottom: 1rem;
   }
@@ -138,8 +274,10 @@ My research interests include vision-language models, agents, trustworthy reason
   }
 
   .profile img {
-    width: 58%;
-    max-width: 58%;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   }
 
   .publications .author em {
@@ -219,10 +357,26 @@ My research interests include vision-language models, agents, trustworthy reason
 
   .publications ol.bibliography > li .title,
   .publications .bibliography > li .title {
+    margin-bottom: 0.2rem;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.08rem;
     font-weight: 600;
     line-height: 1.35;
+  }
+
+  /* Typography hierarchy: authors > venue */
+  .publications ol.bibliography > li .author,
+  .publications .bibliography > li .author {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--global-text-color);
+  }
+
+  .publications ol.bibliography > li .periodical,
+  .publications .bibliography > li .periodical {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--global-text-color-light);
   }
 
   .publications ol.bibliography > li .col,
@@ -280,14 +434,9 @@ My research interests include vision-language models, agents, trustworthy reason
 
   @media (max-width: 575.98px) {
     .profile {
-      width: 36%;
-      max-width: 192px;
+      width: 42%;
+      max-width: 200px;
       margin-left: 1rem;
-    }
-
-    .profile img {
-      width: 58%;
-      max-width: 58%;
     }
 
     .publications ol.bibliography > li .row,
