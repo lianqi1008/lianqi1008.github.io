@@ -74,7 +74,7 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     <img class="experience-logo" src="{{ '/assets/img/logos/shanghai-ai-lab.png' | relative_url }}" alt="Shanghai AI Laboratory logo" loading="lazy" />
     <div class="experience-body">
       <div class="experience-role">Research Intern</div>
-      <div class="experience-org">Shanghai Artificial Intelligence Laboratory</div>
+      <div class="experience-org">Shanghai Artificial Intelligence Laboratory · Frontier Exploration Center</div>
     </div>
     <div class="experience-date">Aug 2025 – Present</div>
   </div>
@@ -82,7 +82,7 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     <img class="experience-logo" src="{{ '/assets/img/logos/xiaohongshu.png' | relative_url }}" alt="Xiaohongshu logo" loading="lazy" />
     <div class="experience-body">
       <div class="experience-role">Research Intern</div>
-      <div class="experience-org">Xiaohongshu (RedNote)</div>
+      <div class="experience-org">Xiaohongshu (RedNote) · Content Understanding Group, Applied Algorithms</div>
     </div>
     <div class="experience-date">Jul 2024 – Jul 2025</div>
   </div>
@@ -107,17 +107,60 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   @import url("https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.1.0/600.css");
 
   /* ---------------------------------------------------------------------
-   * Palette — quiet ink-teal accent, overriding the theme default
+   * Palette — quiet ink-teal accent. The theme's compiled main.css is not
+   * shipped correctly, so the full light/dark variable sets live here.
    * ------------------------------------------------------------------- */
   :root {
+    color-scheme: light;
+    --global-bg-color: #ffffff;
+    --global-text-color: #1a1a1a;
+    --global-text-color-light: #767676;
     --global-theme-color: #0e7490;
     --global-hover-color: #0e7490;
+    --global-divider-color: rgba(0, 0, 0, 0.1);
+    --global-card-bg-color: #ffffff;
   }
 
-  html[data-theme="dark"],
-  html[data-theme-setting="dark"] {
+  html[data-theme="dark"] {
+    color-scheme: dark;
+    --global-bg-color: #1c1c1d;
+    --global-text-color: #d9d9d9;
+    --global-text-color-light: #9a9aa0;
     --global-theme-color: #6cc5d4;
     --global-hover-color: #6cc5d4;
+    --global-divider-color: #424246;
+    --global-card-bg-color: #242428;
+  }
+
+  html,
+  body {
+    background: var(--global-bg-color);
+    color: var(--global-text-color);
+  }
+
+  a,
+  .post a,
+  .post article a {
+    color: var(--global-theme-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  .post-title,
+  .publications .title {
+    color: var(--global-text-color);
+  }
+
+  /* keep university/company logos legible on a dark background */
+  html[data-theme="dark"] .experience-logo {
+    background: #f4f4f5;
+    padding: 3px;
+    box-sizing: border-box;
+  }
+
+  html[data-theme="dark"] .profile img {
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
   }
 
   /* soft radial tint at the top of the page */
@@ -362,6 +405,18 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     border: 0;
     font-size: 0.92rem;
     line-height: 1.6;
+    color: var(--global-text-color);
+  }
+
+  .news .table,
+  .news .table th,
+  .news .table td {
+    color: var(--global-text-color);
+    background: transparent;
+  }
+
+  .news .table th {
+    color: var(--global-theme-color);
   }
 
   /* ---------------------------------------------------------------------
