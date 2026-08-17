@@ -286,8 +286,16 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     gap: 1rem;
     padding: 0.8rem 1.15rem;
     border: 1px solid var(--global-divider-color);
-    border-radius: 8px;
+    border-radius: 10px;
     background: var(--global-card-bg-color, var(--global-bg-color));
+    transition:
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .experience-item:hover {
+    border-color: color-mix(in srgb, var(--global-theme-color) 35%, var(--global-divider-color));
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
   }
 
   .experience-logo {
@@ -340,12 +348,26 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   }
 
   .post h2 {
+    position: relative;
     margin-top: 2.6rem;
-    margin-bottom: 1.1rem;
-    font-family: Georgia, "Times New Roman", serif;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.55rem;
+    font-family: Georgia, "Times New Roman", "Songti SC", STSong, SimSun, serif;
     font-size: 1.45rem;
     font-weight: 600;
     letter-spacing: 0;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  /* short theme-color accent on top of the divider */
+  .post h2::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 2.4rem;
+    height: 2px;
+    background: var(--global-theme-color);
   }
 
   .post h2:first-of-type {
@@ -385,10 +407,10 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   .publications ol.bibliography > li,
   .publications .bibliography > li {
     margin-bottom: 0;
-    padding: 1.05rem 1.15rem;
+    padding: 1.15rem 1.3rem;
     border: 1px solid var(--global-divider-color);
     border-left: 0.28rem solid var(--global-theme-color);
-    border-radius: 8px;
+    border-radius: 10px;
     background: var(--global-card-bg-color, var(--global-bg-color));
     transition:
       box-shadow 0.2s ease,
@@ -397,7 +419,7 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
 
   .publications ol.bibliography > li:hover,
   .publications .bibliography > li:hover {
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
     transform: translateY(-2px);
   }
 
@@ -414,9 +436,9 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   .publications ol.bibliography > li .abbr,
   .publications .bibliography > li .abbr {
     display: flex;
-    flex: 0 0 210px;
+    flex: 0 0 250px;
     flex-direction: column;
-    max-width: 210px;
+    max-width: 250px;
     padding-right: 0;
     padding-left: 0;
     text-align: center;
@@ -453,7 +475,7 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     width: 100%;
     max-width: 100%;
     border: 1px solid var(--global-divider-color);
-    border-radius: 6px;
+    border-radius: 8px;
     background: #fff;
     box-sizing: border-box;
   }
