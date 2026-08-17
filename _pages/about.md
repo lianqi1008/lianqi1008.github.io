@@ -38,6 +38,35 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
 
 {% include news.liquid %}
 
+## Education
+
+<div class="experience-list">
+  <div class="experience-item">
+    <img class="experience-logo" src="{{ '/assets/img/logos/sjtu.png' | relative_url }}" alt="Shanghai Jiao Tong University logo" loading="lazy" />
+    <div class="experience-body">
+      <div class="experience-role">Ph.D. in Information and Communication Engineering</div>
+      <div class="experience-org">Shanghai Jiao Tong University · Advisors: Prof. Guo Lu and Prof. Wenjun Zhang</div>
+    </div>
+    <div class="experience-date">Sep 2025 – Present</div>
+  </div>
+  <div class="experience-item">
+    <img class="experience-logo" src="{{ '/assets/img/logos/bjtu.png' | relative_url }}" alt="Beijing Jiaotong University logo" loading="lazy" />
+    <div class="experience-body">
+      <div class="experience-role">M.S. in Information and Communication Engineering</div>
+      <div class="experience-org">Beijing Jiaotong University · Advisors: Prof. Huihui Bai and Prof. Yao Zhao</div>
+    </div>
+    <div class="experience-date">Sep 2022 – Jun 2025</div>
+  </div>
+  <div class="experience-item">
+    <img class="experience-logo" src="{{ '/assets/img/logos/whut.png' | relative_url }}" alt="Wuhan University of Technology logo" loading="lazy" />
+    <div class="experience-body">
+      <div class="experience-role">B.S. in Software Engineering</div>
+      <div class="experience-org">Wuhan University of Technology</div>
+    </div>
+    <div class="experience-date">Sep 2018 – Jun 2022</div>
+  </div>
+</div>
+
 ## Experience
 
 <div class="experience-list">
@@ -182,6 +211,66 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     font-size: 0.82rem;
     color: var(--global-text-color-light);
     text-align: center;
+  }
+
+  /* --- News timeline --- */
+  .news table {
+    margin-bottom: 0;
+  }
+
+  .news table tr {
+    position: relative;
+  }
+
+  .news table th {
+    position: relative;
+    width: 7.5rem !important;
+    padding: 0.35rem 0.75rem 0.35rem 1.35rem;
+    border: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--global-theme-color);
+    white-space: nowrap;
+    vertical-align: top;
+  }
+
+  /* vertical line */
+  .news table th::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.42rem;
+    width: 2px;
+    background: var(--global-divider-color);
+  }
+
+  .news table tr:first-child th::before {
+    top: 0.75rem;
+  }
+
+  .news table tr:last-child th::before {
+    bottom: auto;
+    height: 0.75rem;
+  }
+
+  /* dot */
+  .news table th::after {
+    content: "";
+    position: absolute;
+    top: 0.62rem;
+    left: 0.19rem;
+    width: 0.52rem;
+    height: 0.52rem;
+    border-radius: 50%;
+    background: var(--global-theme-color);
+  }
+
+  .news table td {
+    padding: 0.35rem 0 0.9rem 0.5rem;
+    border: 0;
+    font-size: 0.93rem;
+    line-height: 1.55;
   }
 
   /* --- Experience --- */
@@ -391,6 +480,15 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     font-size: 0.85rem;
     font-style: italic;
     color: var(--global-text-color-light);
+  }
+
+  /* TL;DR note (second .periodical block) rendered as plain text */
+  .publications ol.bibliography > li .periodical + .periodical,
+  .publications .bibliography > li .periodical + .periodical {
+    margin-top: 0.15rem;
+    font-size: 0.84rem;
+    font-style: normal;
+    line-height: 1.5;
   }
 
   .publications ol.bibliography > li .row > div:not(.abbr),
