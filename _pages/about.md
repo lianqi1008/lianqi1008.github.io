@@ -28,7 +28,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Ph.D. student in Information and Communication Engineering at [Shanghai Jiao Tong University](https://www.sjtu.edu.cn/), advised by **<u>Prof. Guo Lu</u>** and **<u>Prof. Wenjun Zhang</u>**. I received my M.S. degree from Beijing Jiaotong University and my B.S. degree from Wuhan University of Technology.
+I am a Ph.D. student in Information and Communication Engineering at **[Shanghai Jiao Tong University](https://www.sjtu.edu.cn/)**, advised by **<u>Prof. Guo Lu</u>** and **<u>Prof. Wenjun Zhang</u>**. I received my M.S. degree from Beijing Jiaotong University and my B.S. degree from Wuhan University of Technology.
 
 My research focuses on <span class="research-highlight">LLM post-training</span> and <span class="research-highlight">AIGC</span> — aligning and enhancing large models after pre-training, and building generative models for visual and multimodal content.
 
@@ -543,8 +543,15 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
       flex-wrap: wrap;
     }
 
+    /* keep logo and text on one row; only the date wraps below */
+    .experience-body {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
     .experience-date {
       flex-basis: 100%;
+      margin-top: 0.15rem;
       margin-left: calc(44px + 1rem);
     }
   }
@@ -770,6 +777,13 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     .publications ol.bibliography > li .row,
     .publications .bibliography > li .row {
       flex-direction: column;
+    }
+
+    /* in column direction, flex-basis 0 collapses the text column height
+       and everything overlaps — restore natural sizing */
+    .publications ol.bibliography > li .row > div:not(.abbr),
+    .publications .bibliography > li .row > div:not(.abbr) {
+      flex: 1 1 auto;
     }
 
     .publications ol.bibliography > li .abbr,
