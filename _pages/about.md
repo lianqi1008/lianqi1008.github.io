@@ -28,7 +28,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Ph.D. student in Information and Communication Engineering at **[Shanghai Jiao Tong University](https://www.sjtu.edu.cn/)**, advised by **<u>Prof. Guo Lu</u>** and **<u>Prof. Wenjun Zhang</u>**. I received my M.S. degree from Beijing Jiaotong University and my B.S. degree from Wuhan University of Technology.
+I am a Ph.D. student in Information and Communication Engineering at **[Shanghai Jiao Tong University (SJTU)](https://www.sjtu.edu.cn/)**, advised by **<u>Prof. Guo Lu</u>** and **<u>Prof. Wenjun Zhang</u>**. I received my M.S. degree from Beijing Jiaotong University and my B.S. degree from Wuhan University of Technology.
 
 My research focuses on <span class="research-highlight">LLM post-training</span> and <span class="research-highlight">AIGC</span> — aligning and enhancing large models after pre-training, and building generative models for visual and multimodal content.
 
@@ -74,7 +74,7 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     <img class="experience-logo" src="{{ '/assets/img/logos/shanghai-ai-lab.png' | relative_url }}" alt="Shanghai AI Laboratory logo" loading="lazy" />
     <div class="experience-body">
       <div class="experience-role">Research Intern</div>
-      <div class="experience-org">Shanghai Artificial Intelligence Laboratory · Frontier Exploration Center</div>
+      <div class="experience-org">Shanghai Artificial Intelligence Laboratory (Shanghai AI Lab) · Foundational Research Lab</div>
     </div>
     <div class="experience-date">Aug 2025 – Present</div>
   </div>
@@ -82,7 +82,7 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     <img class="experience-logo" src="{{ '/assets/img/logos/xiaohongshu.png' | relative_url }}" alt="Xiaohongshu logo" loading="lazy" />
     <div class="experience-body">
       <div class="experience-role">Research Intern</div>
-      <div class="experience-org">Xiaohongshu (RedNote) · Content Understanding Group, Applied Algorithms</div>
+      <div class="experience-org">Xiaohongshu · Applied Algorithms & Content Understanding Group</div>
     </div>
     <div class="experience-date">Jul 2024 – Jul 2025</div>
   </div>
