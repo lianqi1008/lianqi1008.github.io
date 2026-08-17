@@ -217,6 +217,66 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     justify-content: flex-end;
   }
 
+  /* -----------------------------------------------------------------
+   * Theme toggle — clean circular button (replaces the broken
+   * half-sun-moon composite icon from the unshipped main.css)
+   * ----------------------------------------------------------------- */
+  .navbar .toggle-container {
+    list-style: none;
+  }
+
+  #light-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    padding: 0;
+    border: 1px solid color-mix(in srgb, var(--global-divider-color) 85%, transparent);
+    border-radius: 50%;
+    background: var(--global-card-bg-color, var(--global-bg-color));
+    color: var(--global-text-color-light);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  #light-toggle:hover {
+    border-color: color-mix(in srgb, var(--global-theme-color) 45%, transparent);
+    background: color-mix(in srgb, var(--global-theme-color) 8%, transparent);
+    color: var(--global-theme-color);
+  }
+
+  /* one icon at a time: moon on light, sun on dark (system = moon).
+     Icons are drawn with CSS masks so they render without FontAwesome. */
+  #light-toggle-system,
+  #light-toggle-dark,
+  #light-toggle-light {
+    display: none;
+    width: 1em;
+    height: 1em;
+    background: currentColor;
+  }
+
+  html:not([data-theme="dark"]) #light-toggle-dark {
+    display: inline-block;
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>')
+      center / contain no-repeat;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>')
+      center / contain no-repeat;
+  }
+
+  html[data-theme="dark"] #light-toggle-light {
+    display: inline-block;
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><g stroke="black" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1.5" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22.5" y2="12"/><line x1="4.6" y1="4.6" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.4" y2="4.6"/></g></svg>')
+      center / contain no-repeat;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><g stroke="black" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1.5" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22.5" y2="12"/><line x1="4.6" y1="4.6" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.4" y2="4.6"/></g></svg>')
+      center / contain no-repeat;
+  }
+
   .post,
   .about {
     padding-top: 0.25rem;
@@ -540,12 +600,30 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   .publications ol.bibliography > li .abbr,
   .publications .bibliography > li .abbr {
     display: flex;
-    flex: 0 0 250px;
+    flex: 0 0 300px;
     flex-direction: column;
-    max-width: 250px;
+    max-width: 300px;
     padding-right: 0;
     padding-left: 0;
     text-align: center;
+  }
+
+  /* venue badge: solid venue color, white text (rule lost with main.css) */
+  .publications ol.bibliography > li .abbr abbr,
+  .publications .bibliography > li .abbr abbr {
+    padding: 0.3rem 0;
+    background-color: var(--global-theme-color);
+  }
+
+  .publications ol.bibliography > li .abbr abbr,
+  .publications .bibliography > li .abbr abbr,
+  .publications ol.bibliography > li .abbr abbr a,
+  .publications .bibliography > li .abbr abbr a,
+  .publications ol.bibliography > li .abbr abbr div,
+  .publications .bibliography > li .abbr abbr div {
+    color: #fff !important;
+    font-size: 0.8rem;
+    text-decoration: none;
   }
 
   .publications ol.bibliography > li .abbr abbr,
