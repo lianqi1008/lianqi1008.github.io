@@ -243,8 +243,8 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   }
 
   .profile {
-    width: 24%;
-    max-width: 220px;
+    width: 20%;
+    max-width: 185px;
     margin-top: 0.3rem;
     margin-left: 2rem;
     margin-bottom: 1rem;
@@ -393,8 +393,8 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     color: var(--global-text-color-light);
   }
 
-  .publications ol.bibliography > li .col:not(.abbr),
-  .publications .bibliography > li .col:not(.abbr) {
+  .publications ol.bibliography > li .row > div:not(.abbr),
+  .publications .bibliography > li .row > div:not(.abbr) {
     flex: 1 1 0;
     max-width: none;
     padding-right: 0;
