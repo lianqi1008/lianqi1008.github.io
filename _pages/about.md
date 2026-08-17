@@ -103,9 +103,46 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
 - Reviewer, ECCV 2026
 
 <style>
+  @import url("https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.1.0/400.css");
+  @import url("https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.1.0/600.css");
+
+  /* ---------------------------------------------------------------------
+   * Palette — quiet ink-teal accent, overriding the theme default
+   * ------------------------------------------------------------------- */
+  :root {
+    --global-theme-color: #0e7490;
+    --global-hover-color: #0e7490;
+  }
+
+  html[data-theme="dark"],
+  html[data-theme-setting="dark"] {
+    --global-theme-color: #6cc5d4;
+    --global-hover-color: #6cc5d4;
+  }
+
+  /* soft radial tint at the top of the page */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: -1;
+    height: 420px;
+    pointer-events: none;
+    background: radial-gradient(
+      900px 340px at 82% -12%,
+      color-mix(in srgb, var(--global-theme-color) 8%, transparent),
+      transparent 70%
+    );
+  }
+
+  /* ---------------------------------------------------------------------
+   * Typography
+   * ------------------------------------------------------------------- */
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+    font-size: 0.96rem;
     font-weight: 400;
+    letter-spacing: 0.004em;
   }
 
   h1,
@@ -113,7 +150,7 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   h3,
   .navbar-brand,
   .post-title {
-    font-family: Georgia, "Times New Roman", "Songti SC", STSong, SimSun, serif;
+    font-family: "Source Serif 4", Palatino, "Palatino Linotype", Georgia, "Songti SC", STSong, SimSun, serif;
     font-weight: 600;
   }
 
@@ -153,6 +190,7 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   .post article > .clearfix > p {
     max-width: 96%;
     margin-bottom: 1.05rem;
+    line-height: 1.72;
   }
 
   /* Hide the site footer (copyright / theme credits) */
@@ -164,9 +202,11 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     height: 1.1rem;
   }
 
-  /* --- Intro / header area --- */
+  /* ---------------------------------------------------------------------
+   * Intro / header
+   * ------------------------------------------------------------------- */
   .post-header .post-title {
-    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.35rem;
     font-weight: 600;
     letter-spacing: 0.01em;
   }
@@ -175,168 +215,37 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     display: inline-flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: 0.35rem;
+    margin-top: 0.4rem;
   }
 
   .desc .intro-links a {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    padding: 0.22rem 0.75rem;
-    border: 1px solid var(--global-divider-color);
+    padding: 0.18rem 0.72rem;
+    border: 1px solid color-mix(in srgb, var(--global-divider-color) 80%, transparent);
     border-radius: 999px;
-    font-size: 0.85rem;
+    font-size: 0.83rem;
     color: var(--global-text-color);
     text-decoration: none;
     transition:
       border-color 0.2s ease,
+      background-color 0.2s ease,
       color 0.2s ease;
   }
 
   .desc .intro-links a:hover {
-    border-color: var(--global-theme-color);
+    border-color: color-mix(in srgb, var(--global-theme-color) 45%, transparent);
+    background: color-mix(in srgb, var(--global-theme-color) 7%, transparent);
     color: var(--global-theme-color);
   }
 
   .research-highlight {
-    padding: 0.05rem 0.35rem;
-    border-radius: 4px;
-    background: color-mix(in srgb, var(--global-theme-color) 12%, transparent);
+    padding: 0.05rem 0.38rem;
+    border-radius: 5px;
+    background: color-mix(in srgb, var(--global-theme-color) 10%, transparent);
     color: var(--global-theme-color);
     font-weight: 600;
-  }
-
-  .profile-location {
-    margin-top: 0.4rem;
-    font-size: 0.82rem;
-    color: var(--global-text-color-light);
-    text-align: center;
-  }
-
-  /* --- News timeline --- */
-  .news table {
-    margin-bottom: 0;
-  }
-
-  .news table tr {
-    position: relative;
-  }
-
-  .news table th {
-    position: relative;
-    width: 7.5rem !important;
-    padding: 0.35rem 0.75rem 0.35rem 1.35rem;
-    border: 0;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--global-theme-color);
-    white-space: nowrap;
-    vertical-align: top;
-  }
-
-  /* vertical line */
-  .news table th::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0.42rem;
-    width: 2px;
-    background: var(--global-divider-color);
-  }
-
-  .news table tr:first-child th::before {
-    top: 0.75rem;
-  }
-
-  .news table tr:last-child th::before {
-    bottom: auto;
-    height: 0.75rem;
-  }
-
-  /* dot */
-  .news table th::after {
-    content: "";
-    position: absolute;
-    top: 0.62rem;
-    left: 0.19rem;
-    width: 0.52rem;
-    height: 0.52rem;
-    border-radius: 50%;
-    background: var(--global-theme-color);
-  }
-
-  .news table td {
-    padding: 0.35rem 0 0.9rem 0.5rem;
-    border: 0;
-    font-size: 0.93rem;
-    line-height: 1.55;
-  }
-
-  /* --- Experience --- */
-  .experience-list {
-    display: grid;
-    gap: 0.75rem;
-    margin-top: 0.75rem;
-  }
-
-  .experience-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.8rem 1.15rem;
-    border: 1px solid var(--global-divider-color);
-    border-radius: 10px;
-    background: var(--global-card-bg-color, var(--global-bg-color));
-    transition:
-      box-shadow 0.2s ease,
-      border-color 0.2s ease;
-  }
-
-  .experience-item:hover {
-    border-color: color-mix(in srgb, var(--global-theme-color) 35%, var(--global-divider-color));
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-  }
-
-  .experience-logo {
-    flex: 0 0 44px;
-    width: 44px;
-    height: 44px;
-    border-radius: 8px;
-    object-fit: contain;
-  }
-
-  .experience-body {
-    flex: 1 1 auto;
-    min-width: 0;
-  }
-
-  .experience-role {
-    font-size: 0.98rem;
-    font-weight: 600;
-  }
-
-  .experience-org {
-    font-size: 0.88rem;
-    color: var(--global-text-color-light);
-  }
-
-  .experience-date {
-    flex: 0 0 auto;
-    font-size: 0.82rem;
-    color: var(--global-text-color-light);
-    white-space: nowrap;
-  }
-
-  @media (max-width: 575.98px) {
-    .experience-item {
-      flex-wrap: wrap;
-    }
-
-    .experience-date {
-      flex-basis: 100%;
-      margin-left: calc(44px + 1rem);
-    }
   }
 
   .profile {
@@ -347,27 +256,37 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     margin-bottom: 1rem;
   }
 
-  .post h2 {
-    position: relative;
-    margin-top: 2.6rem;
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.55rem;
-    font-family: Georgia, "Times New Roman", "Songti SC", STSong, SimSun, serif;
-    font-size: 1.45rem;
-    font-weight: 600;
-    letter-spacing: 0;
-    border-bottom: 1px solid var(--global-divider-color);
+  .profile img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
   }
 
-  /* short theme-color accent on top of the divider */
+  /* ---------------------------------------------------------------------
+   * Section headings — hairline + short gradient accent
+   * ------------------------------------------------------------------- */
+  .post h2 {
+    position: relative;
+    margin-top: 2.7rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    font-family: "Source Serif 4", Palatino, "Palatino Linotype", Georgia, "Songti SC", STSong, SimSun, serif;
+    font-size: 1.38rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border-bottom: 1px solid color-mix(in srgb, var(--global-divider-color) 70%, transparent);
+  }
+
   .post h2::after {
     content: "";
     position: absolute;
     bottom: -1px;
     left: 0;
-    width: 2.4rem;
+    width: 2.6rem;
     height: 2px;
-    background: var(--global-theme-color);
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--global-theme-color), color-mix(in srgb, var(--global-theme-color) 15%, transparent));
   }
 
   .post h2:first-of-type {
@@ -384,13 +303,140 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     font-size: 0.92em;
   }
 
-  .profile img {
-    width: 100%;
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  /* ---------------------------------------------------------------------
+   * News timeline
+   * ------------------------------------------------------------------- */
+  .news table {
+    margin-bottom: 0;
   }
 
+  .news table tr {
+    position: relative;
+  }
+
+  .news table th {
+    position: relative;
+    width: 7rem !important;
+    padding: 0.35rem 0.75rem 0.35rem 1.35rem;
+    border: 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--global-theme-color);
+    white-space: nowrap;
+    vertical-align: top;
+  }
+
+  .news table th::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.44rem;
+    width: 1.5px;
+    background: color-mix(in srgb, var(--global-divider-color) 80%, transparent);
+  }
+
+  .news table tr:first-child th::before {
+    top: 0.75rem;
+  }
+
+  .news table tr:last-child th::before {
+    bottom: auto;
+    height: 0.75rem;
+  }
+
+  .news table th::after {
+    content: "";
+    position: absolute;
+    top: 0.64rem;
+    left: 0.235rem;
+    width: 0.46rem;
+    height: 0.46rem;
+    border-radius: 50%;
+    background: var(--global-theme-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--global-theme-color) 14%, transparent);
+  }
+
+  .news table td {
+    padding: 0.35rem 0 0.95rem 0.5rem;
+    border: 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  /* ---------------------------------------------------------------------
+   * Education & Experience cards
+   * ------------------------------------------------------------------- */
+  .experience-list {
+    display: grid;
+    gap: 0.7rem;
+    margin-top: 0.75rem;
+  }
+
+  .experience-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1.1rem;
+    border: 1px solid color-mix(in srgb, var(--global-divider-color) 75%, transparent);
+    border-radius: 12px;
+    background: var(--global-card-bg-color, var(--global-bg-color));
+    transition:
+      box-shadow 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .experience-item:hover {
+    border-color: color-mix(in srgb, var(--global-theme-color) 32%, var(--global-divider-color));
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+  }
+
+  .experience-logo {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+
+  .experience-body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .experience-role {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .experience-org {
+    font-size: 0.86rem;
+    color: var(--global-text-color-light);
+  }
+
+  .experience-date {
+    flex: 0 0 auto;
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 575.98px) {
+    .experience-item {
+      flex-wrap: wrap;
+    }
+
+    .experience-date {
+      flex-basis: 100%;
+      margin-left: calc(44px + 1rem);
+    }
+  }
+
+  /* ---------------------------------------------------------------------
+   * Publications
+   * ------------------------------------------------------------------- */
   .publications .author em {
     border-bottom: 0;
     font-style: normal;
@@ -400,26 +446,29 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   .publications ol.bibliography,
   .publications .bibliography {
     display: grid;
-    gap: 1rem;
+    gap: 1.05rem;
     margin-top: 0.75rem;
+    padding-left: 0;
+    list-style: none;
   }
 
   .publications ol.bibliography > li,
   .publications .bibliography > li {
     margin-bottom: 0;
     padding: 1.15rem 1.3rem;
-    border: 1px solid var(--global-divider-color);
-    border-left: 0.28rem solid var(--global-theme-color);
-    border-radius: 10px;
+    border: 1px solid color-mix(in srgb, var(--global-divider-color) 75%, transparent);
+    border-radius: 12px;
     background: var(--global-card-bg-color, var(--global-bg-color));
     transition:
       box-shadow 0.2s ease,
+      border-color 0.2s ease,
       transform 0.2s ease;
   }
 
   .publications ol.bibliography > li:hover,
   .publications .bibliography > li:hover {
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    border-color: color-mix(in srgb, var(--global-theme-color) 32%, var(--global-divider-color));
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
     transform: translateY(-2px);
   }
 
@@ -427,7 +476,7 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   .publications .bibliography > li .row {
     display: flex;
     align-items: stretch;
-    gap: 1rem;
+    gap: 1.15rem;
     width: 100%;
     margin-right: 0;
     margin-left: 0;
@@ -450,7 +499,10 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   .publications .bibliography > li .abbr .badge {
     display: block;
     width: 100%;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.7rem;
+    border-radius: 7px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
   }
 
   /* Venue badge and preview image share the exact same column width */
@@ -474,7 +526,7 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     display: block;
     width: 100%;
     max-width: 100%;
-    border: 1px solid var(--global-divider-color);
+    border: 1px solid color-mix(in srgb, var(--global-divider-color) 70%, transparent);
     border-radius: 8px;
     background: #fff;
     box-sizing: border-box;
@@ -482,24 +534,24 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
 
   .publications ol.bibliography > li .title,
   .publications .bibliography > li .title {
-    margin-bottom: 0.2rem;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.08rem;
+    margin-bottom: 0.25rem;
+    font-family: "Source Serif 4", Palatino, "Palatino Linotype", Georgia, serif;
+    font-size: 1.06rem;
     font-weight: 600;
-    line-height: 1.35;
+    line-height: 1.4;
   }
 
   /* Typography hierarchy: authors > venue */
   .publications ol.bibliography > li .author,
   .publications .bibliography > li .author {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.89rem;
+    line-height: 1.55;
     color: var(--global-text-color);
   }
 
   .publications ol.bibliography > li .periodical,
   .publications .bibliography > li .periodical {
-    font-size: 0.85rem;
+    font-size: 0.84rem;
     font-style: italic;
     color: var(--global-text-color-light);
   }
@@ -507,10 +559,12 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   /* TL;DR note (second .periodical block) rendered as plain text */
   .publications ol.bibliography > li .periodical + .periodical,
   .publications .bibliography > li .periodical + .periodical {
-    margin-top: 0.15rem;
+    margin-top: 0.2rem;
     font-size: 0.84rem;
     font-style: normal;
-    line-height: 1.5;
+    line-height: 1.55;
+    color: var(--global-text-color);
+    opacity: 0.85;
   }
 
   .publications ol.bibliography > li .row > div:not(.abbr),
@@ -529,24 +583,25 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   /* Link buttons (arXiv / Code / ...) rendered as subtle pills */
   .publications .links a.btn,
   .publications .links a.award {
-    margin: 0.35rem 0.3rem 0 0;
-    padding: 0.12rem 0.6rem;
-    border: 1px solid var(--global-divider-color);
+    margin: 0.4rem 0.3rem 0 0;
+    padding: 0.1rem 0.62rem;
+    border: 1px solid color-mix(in srgb, var(--global-divider-color) 85%, transparent);
     border-radius: 999px;
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     letter-spacing: 0.02em;
   }
 
   .publications .links a.btn:hover {
-    border-color: var(--global-theme-color);
+    border-color: color-mix(in srgb, var(--global-theme-color) 45%, transparent);
+    background: color-mix(in srgb, var(--global-theme-color) 8%, transparent);
     color: var(--global-theme-color);
   }
 
-  /* First-author marker */
+  /* First-author marker — tinted, lighter than a solid fill */
   .publications .links a.award {
-    border-color: var(--global-theme-color);
-    background: var(--global-theme-color);
-    color: var(--global-bg-color);
+    border-color: color-mix(in srgb, var(--global-theme-color) 35%, transparent);
+    background: color-mix(in srgb, var(--global-theme-color) 10%, transparent);
+    color: var(--global-theme-color) !important;
     cursor: default;
     font-weight: 600;
   }
@@ -557,13 +612,19 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   }
 
   .publications .badges img {
-    height: 1.15rem;
+    height: 1.1rem;
+  }
+
+  /* suppress the print-only duplicate of the award text */
+  .publications li div.award.hidden {
+    display: none !important;
   }
 
   .publication-note {
     margin-top: -0.35rem;
     margin-bottom: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
   }
 
   @media (max-width: 575.98px) {
