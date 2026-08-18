@@ -103,12 +103,15 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
 - Reviewer, ECCV 2026
 
 <div class="visitor-map">
-  <!-- MapMyVisitors globe (ClustrMaps sister service; data collection starts once live) -->
-  <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=bAefpmVuRiVpGsSfQjKwQGdUZ9Y8uxzWP_XtyVb97DA"></script>
+  <!-- MapMyVisitors globe sizes itself to its parent element, so the
+       inner wrapper fixes the rendered globe at 150px -->
+  <div class="visitor-globe">
+    <script type="text/javascript" id="mmvst_globe" src="https://mapmyvisitors.com/globe.js?d=bAefpmVuRiVpGsSfQjKwQGdUZ9Y8uxzWP_XtyVb97DA"></script>
+  </div>
 </div>
 
 <!-- GoatCounter page-view counter (private dashboard at https://YOURCODE.goatcounter.com) -->
-<script data-goatcounter="https://lianqi.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://lianqi.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
 <style>
   @import url("https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.1.0/400.css");
@@ -776,8 +779,8 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
   }
 
   /* Visitor globe: centered footer ornament.
-     Collapses to nothing while the third-party script hasn't rendered,
-     so a blocked/slow load never leaves blank space at the page bottom. */
+     The globe script sizes itself to its parent, so .visitor-globe fixes
+     the width; margins apply only once the widget actually renders. */
   .visitor-map {
     display: flex;
     justify-content: center;
@@ -785,14 +788,15 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     opacity: 0.9;
   }
 
-  .visitor-map:has(canvas, img, iframe) {
+  .visitor-map:has(canvas, img, iframe, svg) {
     margin-top: 3rem;
     margin-bottom: 1rem;
   }
 
-  .visitor-map canvas,
-  .visitor-map a {
-    max-width: 150px !important;
+  .visitor-globe {
+    width: 150px;
+    max-width: 150px;
+    overflow: hidden;
   }
 
   @media (max-width: 575.98px) {
