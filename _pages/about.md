@@ -111,13 +111,15 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
 </div>
 
 <script>
-  window.addEventListener("load", function () {
+  /* dynamically inserted scripts load async and never block page parsing,
+     so inject right away instead of waiting for the window load event */
+  (function () {
     var s = document.createElement("script");
     s.type = "text/javascript";
     s.id = "mmvst_globe";
     s.src = "https://mapmyvisitors.com/globe.js?d=bAefpmVuRiVpGsSfQjKwQGdUZ9Y8uxzWP_XtyVb97DA";
     document.getElementById("visitor-globe-slot").appendChild(s);
-  });
+  })();
 </script>
 
 <!-- GoatCounter page-view counter (private dashboard at https://YOURCODE.goatcounter.com) -->
