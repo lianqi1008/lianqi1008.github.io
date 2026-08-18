@@ -104,18 +104,33 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
 
 <div class="visitor-map">
   <!-- MapMyVisitors globe sizes itself to its parent element, so the
-       inner wrapper fixes the rendered globe at 150px -->
-  <div class="visitor-globe">
-    <script type="text/javascript" id="mmvst_globe" src="https://mapmyvisitors.com/globe.js?d=bAefpmVuRiVpGsSfQjKwQGdUZ9Y8uxzWP_XtyVb97DA"></script>
-  </div>
+       inner wrapper fixes the rendered globe at 150px.
+       perf: the widget script is injected after window load so a slow
+       mapmyvisitors.com connection never delays page rendering.
+       Original: inline <script id="mmvst_globe" src="https://mapmyvisitors.com/globe.js?d=..."> -->
+  <div class="visitor-globe" id="visitor-globe-slot"></div>
 </div>
+
+<script>
+  window.addEventListener("load", function () {
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.id = "mmvst_globe";
+    s.src = "https://mapmyvisitors.com/globe.js?d=bAefpmVuRiVpGsSfQjKwQGdUZ9Y8uxzWP_XtyVb97DA";
+    document.getElementById("visitor-globe-slot").appendChild(s);
+  });
+</script>
 
 <!-- GoatCounter page-view counter (private dashboard at https://YOURCODE.goatcounter.com) -->
 <script data-goatcounter="https://lianqi.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
+<!-- perf: preconnect + async font CSS instead of blocking @import.
+     Original: @import url(".../@fontsource/source-serif-4@5.1.0/400.css") inside <style>. -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.1.0/400.css" media="print" onload="this.media='all'" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.1.0/600.css" media="print" onload="this.media='all'" />
+
 <style>
-  @import url("https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.1.0/400.css");
-  @import url("https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.1.0/600.css");
 
   /* ---------------------------------------------------------------------
    * Palette — quiet ink-teal accent. The theme's compiled main.css is not
