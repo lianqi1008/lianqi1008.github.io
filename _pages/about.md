@@ -102,6 +102,14 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
 
 - Reviewer, ECCV 2026
 
+<div class="visitor-map">
+  <!-- MapMyVisitors globe (ClustrMaps sister service; data collection starts once live) -->
+  <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=bAefpmVuRiVpGsSfQjKwQGdUZ9Y8uxzWP_XtyVb97DA"></script>
+</div>
+
+<!-- GoatCounter page-view counter (private dashboard at https://YOURCODE.goatcounter.com) -->
+<script data-goatcounter="https://lianqi.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
 <style>
   @import url("https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.1.0/400.css");
   @import url("https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.1.0/600.css");
@@ -765,6 +773,20 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     margin-bottom: 1rem;
     font-size: 0.85rem;
     color: var(--global-text-color-light);
+  }
+
+  /* Visitor globe: centered footer ornament */
+  .visitor-map {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
+
+  .visitor-map canvas,
+  .visitor-map a {
+    max-width: 150px !important;
   }
 
   @media (max-width: 575.98px) {
