@@ -775,13 +775,19 @@ My research focuses on <span class="research-highlight">LLM post-training</span>
     color: var(--global-text-color-light);
   }
 
-  /* Visitor globe: centered footer ornament */
+  /* Visitor globe: centered footer ornament.
+     Collapses to nothing while the third-party script hasn't rendered,
+     so a blocked/slow load never leaves blank space at the page bottom. */
   .visitor-map {
     display: flex;
     justify-content: center;
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  .visitor-map:has(canvas, img, iframe) {
     margin-top: 3rem;
     margin-bottom: 1rem;
-    opacity: 0.9;
   }
 
   .visitor-map canvas,
